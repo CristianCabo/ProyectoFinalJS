@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!--  ENCABEZADO-->
+    <header>
+        <div class="header">
+            <nav class="header-nav">
+                <img src="./Img/logoCarniceria.png" alt="Logo de Carniceria" class="logo" id="logo">
+                <h1 class="carrito-compras" id="carrito-compras"​>🛒<span id="cantidadCarrito" class="cantidadCarrito">0</span>​</h1>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER CON EL TITULO -->
+    <div class="banner" id="banner">
+        <h1 class="banner-titulo">Carniceria Vikingo</h1>
+        <h3 class="banner-texto">La mejor carne que vas a encontrar en la Argentina.</h3>
+    </div>
+
+    <!--  PRODUCTOS-->
+    <div id="conteiner" class="conteiner"></div>
+
+    <!-- MODAL-->
+     <div id="modal-contenedor" class="modal-contenedor"></div>
+     <footer>
+        <p class="footer">Derechos Reservados a Cristián Cabo</p>
+     </footer>
+
+
+    <script src="./JS/app.js"></script>
+    <script src="./JS/carrito.js"></script>
+</body>
+</html>
