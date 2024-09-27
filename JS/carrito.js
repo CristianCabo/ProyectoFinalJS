@@ -129,6 +129,7 @@
 verCarrito.addEventListener("click", abrirCarrito);
 
 
+
 /*   ELIMINAR UN PRODUCTO DEL CARRITO*/
 
 const eliminarProducto = (id)=>{

@@ -1,35 +1,11 @@
 
-/* ARRAY DE PRODUCTOS*/
-const productos= [
-    {id:1, nombre:"Costilla", precio:2200, img:"./img/CarnePrueba.png",cantidad:1,},
-       { id:2, nombre:"Cerdo", precio:400, img:"./img/Costeletade Cerdo.png",cantidad:1,},
-        {id:3, nombre:"Morcilla", precio:300, img:"./img/Morcilla.png",cantidad:1,},
-        {id:4, nombre:"Chorizo", precio:100, img:"./img/Chorizo.png",cantidad:1,},
-        {id:5, nombre:"Carne Picada", precio:100, img:"./img/CarnePicada.png",cantidad:1,},
-        {id:6, nombre:"Milanesas", precio:100, img:"./img/Milanesa.png",cantidad:1,},
-        {id:7, nombre:"Chinchulines", precio:100, img:"./img/Chinchulines.png",cantidad:1,},
-        {id:8, nombre:"Costillar", precio:100, img:"./img/Costillar.png",cantidad:1,},
-  
-]
-
-//SET ITEM CON JSON
-
-const saveLocal = ()=> {
-    localStorage.setItem("carrito", JSON.stringify (carrito));
-}
-
-let carrito= JSON.parse(localStorage.getItem("carrito")) || [];
+const getProductos = async()=>{
+    const respuesta = await fetch("data.json");
+    const data = await respuesta.json();
 
 
-// CAPTURO ELEMENTOS CON ID
-const verCarrito = document.getElementById("carrito-compras");
-const conteiner = document.getElementById ("conteiner");
-const modalContenedor = document.getElementById("modal-contenedor");
-const cantidadCarrito = document.getElementById("cantidadCarrito");
-
-
-/*   RECORREMOS LOS  PRODUCTOS  */
-productos.forEach((producto)=> {
+    /*   RECORREMOS LOS  PRODUCTOS  */
+data.forEach((producto)=> {
 
     let card = document.createElement("div");
     card.className="card";
@@ -80,4 +56,20 @@ productos.forEach((producto)=> {
     }); 
 });
 
+}
+getProductos();
 
+//SET ITEM CON JSON
+
+const saveLocal = ()=> {
+    localStorage.setItem("carrito", JSON.stringify (carrito));
+}
+
+let carrito= JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+// CAPTURO ELEMENTOS CON ID
+const verCarrito = document.getElementById("carrito-compras");
+const conteiner = document.getElementById ("conteiner");
+const modalContenedor = document.getElementById("modal-contenedor");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
